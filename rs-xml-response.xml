@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<servers type="array">
+  <server type="Server">
+    <created-at type="datetime">2010-04-21T18:19:29Z</created-at>
+    <nickname>tay_web_test1</nickname>
+    <updated-at type="datetime">2010-04-21T21:54:07Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/759594</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/42054</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/56912</server-template-href>
+    <state>stopped</state>
+    <server-type>ec2</server-type>
+    <current-instance-href nil="true"></current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-04-27T23:11:50Z</created-at>
+    <nickname>TC server 1</nickname>
+    <updated-at type="datetime">2010-04-29T18:16:55Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/762820</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43245</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/57620</server-template-href>
+    <state>stopped</state>
+    <server-type>ec2</server-type>
+    <current-instance-href nil="true"></current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-04-28T21:51:12Z</created-at>
+    <nickname>Tomcat6 FrontEnd v10 cloned</nickname>
+    <updated-at type="datetime">2010-05-04T23:52:55Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/763451</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/42054</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/57620</server-template-href>
+    <state>stopped</state>
+    <server-type>ec2</server-type>
+    <current-instance-href nil="true"></current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-04-29T22:04:07Z</created-at>
+    <nickname>Tomcat6 FrontEnd v9</nickname>
+    <updated-at type="datetime">2010-04-29T22:04:07Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/764105</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/42054</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/57619</server-template-href>
+    <state>stopped</state>
+    <server-type>ec2</server-type>
+    <current-instance-href nil="true"></current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-04-29T22:56:50Z</created-at>
+    <nickname>danweb2</nickname>
+    <updated-at type="datetime">2010-04-29T22:57:00Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/764133</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43336</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/57745</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/3947906</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-04-30T22:35:33Z</created-at>
+    <nickname>danbig</nickname>
+    <updated-at type="datetime">2010-04-30T22:41:50Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/764485</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43336</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/57745</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/3958185</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-05T00:02:08Z</created-at>
+    <nickname>tomcat_test</nickname>
+    <updated-at type="datetime">2010-05-05T00:02:34Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/765914</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43933</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/58431</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/3990482</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-05T03:31:51Z</created-at>
+    <nickname>tomcat_test2</nickname>
+    <updated-at type="datetime">2010-05-05T03:32:13Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/765979</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43933</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/58431</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/3992092</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-05T17:59:15Z</created-at>
+    <nickname>tc6-1</nickname>
+    <updated-at type="datetime">2010-05-06T15:45:23Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/766077</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43971</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/58490</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4011211</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-05T19:10:02Z</created-at>
+    <nickname>LB1 </nickname>
+    <updated-at type="datetime">2010-05-12T15:47:23Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/766096</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43983</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/58519</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4068879</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-05T19:32:07Z</created-at>
+    <nickname>LB2</nickname>
+    <updated-at type="datetime">2010-05-13T18:29:06Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/766110</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43983</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/58519</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4077426</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-05T19:33:24Z</created-at>
+    <nickname>LB3</nickname>
+    <updated-at type="datetime">2010-05-13T18:29:10Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/766111</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43983</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/58519</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4077427</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-05T19:33:56Z</created-at>
+    <nickname>LB4</nickname>
+    <updated-at type="datetime">2010-05-13T18:29:12Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/766112</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43983</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/58519</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4077428</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-05T19:34:31Z</created-at>
+    <nickname>LB5</nickname>
+    <updated-at type="datetime">2010-05-13T18:29:14Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/766113</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43983</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/58519</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4077430</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-05T20:31:42Z</created-at>
+    <nickname>PHP APP probably will strand</nickname>
+    <updated-at type="datetime">2010-05-14T19:07:54Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/766238</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43983</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/58528</server-template-href>
+    <state>stranded in booting</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4084707</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-05T17:59:15Z</created-at>
+    <nickname>tc6-1</nickname>
+    <updated-at type="datetime">2010-05-06T17:44:20Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/766441</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/44040</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/58490</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4012455</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-06T17:40:07Z</created-at>
+    <nickname>danlucid</nickname>
+    <updated-at type="datetime">2010-05-07T18:46:57Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/766487</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43336</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/57958</server-template-href>
+    <state>stopped</state>
+    <server-type>ec2</server-type>
+    <current-instance-href nil="true"></current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-11T19:22:36Z</created-at>
+    <nickname>DB1</nickname>
+    <updated-at type="datetime">2010-05-13T17:39:10Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/768367</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43983</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/59023</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4077132</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-11T19:31:30Z</created-at>
+    <nickname>mysql_test</nickname>
+    <updated-at type="datetime">2010-05-11T19:31:30Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/768380</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/44040</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/59023</server-template-href>
+    <state>stopped</state>
+    <server-type>ec2</server-type>
+    <current-instance-href nil="true"></current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-05T00:02:08Z</created-at>
+    <nickname>tomcat_test</nickname>
+    <updated-at type="datetime">2010-05-11T19:36:31Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/768381</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/44417</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/58431</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4061467</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-05T03:31:51Z</created-at>
+    <nickname>tomcat_test2</nickname>
+    <updated-at type="datetime">2010-05-11T19:36:52Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/768382</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/44417</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/58431</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4061470</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-11T19:22:36Z</created-at>
+    <nickname>DB2</nickname>
+    <updated-at type="datetime">2010-05-13T17:56:43Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/769968</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43983</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/59023</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4077187</current-instance-href>
+    <tags type="array"/>
+  </server>
+  <server type="Server">
+    <created-at type="datetime">2010-05-13T19:52:57Z</created-at>
+    <nickname>mc1</nickname>
+    <updated-at type="datetime">2010-05-13T21:54:23Z</updated-at>
+    <href>https://my.rightscale.com/api/acct/25875/servers/770066</href>
+    <deployment-href>https://my.rightscale.com/api/acct/25875/deployments/43983</deployment-href>
+    <server-template-href>https://my.rightscale.com/api/acct/25875/ec2_server_templates/59287</server-template-href>
+    <state>operational</state>
+    <server-type>ec2</server-type>
+    <current-instance-href>https://my.rightscale.com/api/acct/25875/ec2_instances/4078852</current-instance-href>
+    <tags type="array"/>
+  </server>
+</servers>
