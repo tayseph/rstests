@@ -1,0 +1,9 @@
+These are my experiments with using the RightScale API Ruby gem 'right-scale-api'. There are a number of dependencies for this, which I've forgotten in the haze. Deal.   Its basically for my own purposes and to keep it portable between my various development environments.  I doubt that anyone will ever look in here.  If anyone does, this was not intended for public consumption, so its a bit of a mess.
+
+You would probably be better off checking out the source page of the guy who wrote it:
+http://github.com/baroquebobcat/right-scale-api/blob/master/README.md
+
+or
+http://support.rightscale.com/06-FAQs/FAQ_0129_-_API_Examples_using_Ruby
+
+...which has a lot more pertinent information.
