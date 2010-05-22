@@ -69,10 +69,21 @@ def extricateArrayInfo(ip)
 	puts ip.class
 
 	array_settings = RightScaleAPI::Client.get(ip[0]+"/instances")
-	puts array_settings
+	puts array_settings.class
 
 	array_settings.each_key do |key|
-		puts key.to_s + " == " + array_settings[key].to_s
+		puts array_settings[key].class
+		array_settings[key].each do |server|
+			server.each_key do |killmenow|
+				# puts killmenow.to_s + " == " + server[killmenow].to_s	
+				if killmenow == "ip_address"
+					puts server[killmenow].to_s
+				end
+			end
+			#puts "************************"
+		end
+		#print key.to_s + " == " + array_settings[key].to_s  + "\n"
+		puts ""
 	end
 
 =begin
