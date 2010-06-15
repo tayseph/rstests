@@ -79,6 +79,9 @@ def extricateArrayInfo(ip)
 				if killmenow == "ip_address"
 					puts server[killmenow].to_s
 				end
+#				if killmenow == "private_ip_address"
+#					puts server[killmenow].to_s
+#				end
 			end
 			#puts "************************"
 		end
