@@ -65,29 +65,52 @@ def showActiveServers(myservers)
 end
 
 def extricateArrayInfo(ip)
+=begin
 
-	puts ip.class
+	This a pretty rough part of the ruby RS API due to the way that it returns the data.
+	The XML format is also a little rough--pick your poison.
+	It returns an array (group of server arrays) of hashes (information describing that array instance), 
+	which in turn contain arrays (of the information about specific parts of that server array.
 
-	array_settings = RightScaleAPI::Client.get(ip[0]+"/instances")
-	puts array_settings.class
+=end
+	#puts "ip.class is " + ip.class.to_s
+	#puts "ip.length is " + ip.length.to_s
 
-	array_settings.each_key do |key|
-		puts array_settings[key].class
-		array_settings[key].each do |server|
-			server.each_key do |killmenow|
-				# puts killmenow.to_s + " == " + server[killmenow].to_s	
-				if killmenow == "ip_address"
-					puts server[killmenow].to_s
+
+
+
+	i = 0
+	ip.each do |bob|
+		addy, name = bob.split('###')
+		puts addy
+		puts name	
+		array_settings = RightScaleAPI::Client.get(addy.to_s+"/instances")
+		#puts "array_settings.class " + array_settings.class.to_s
+
+		array_settings.each_key do |key|
+			#puts array_settings[key].class
+			array_settings[key].each do |server|
+				server.each_key do |killmenow|
+					# puts killmenow.to_s + " == " + server[killmenow].to_s	
+					#if killmenow == "ip_address"
+						puts killmenow.to_s + " == " + server[killmenow].to_s
+					#end
+	#				if killmenow == "private_ip_address"
+	#					puts server[killmenow].to_s
+	#				end
 				end
-#				if killmenow == "private_ip_address"
-#					puts server[killmenow].to_s
-#				end
+				puts "------------------------"
 			end
-			#puts "************************"
+			#print key.to_s + " == " + array_settings[key].to_s  + "\n"
+			puts ""
+			puts " * * * * * * * * * * * "
+			puts ""
 		end
-		#print key.to_s + " == " + array_settings[key].to_s  + "\n"
-		puts ""
+		i = i + 1
 	end
+
+
+
 
 =begin
 	myarrays["server_arrays"].each do |server|
@@ -104,15 +127,16 @@ end
 def extricateArrayIP(myarrays)
 	# pulling out a specific URL based on "nickname"
 
+	array_nicknames = []
 	ip_list = []
 	myarrays["server_arrays"].each do |server|
 		server.each_key do |s|
 			if server["nickname"] =~ /production/
-				ip_list << server["href"]
+				ip_list << server["href"].to_s+"###"+server["nickname"].to_s
 			end
 		end
 	end 
-	return ip_list.uniq!	
+	return ip_list.uniq!
 end
 
 args = ARGV
@@ -128,8 +152,8 @@ begin
 	#mydeployments = RightScaleAPI::Client.get('https://my.rightscale.com/api/acct/25875/deployments')
 
 	#showActiveServers(myservers)
-	list = extricateArrayIP(myarrays)
-	extricateArrayInfo(list)
+	ip_list = extricateArrayIP(myarrays)
+	extricateArrayInfo(ip_list)
 
 		
 
