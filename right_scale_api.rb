@@ -77,8 +77,6 @@ def extricateArrayInfo(ip)
 	#puts "ip.length is " + ip.length.to_s
 
 
-
-
 	i = 0
 	ip.each do |bob|
 		addy, name = bob.split('###')
@@ -95,9 +93,6 @@ def extricateArrayInfo(ip)
 					#if killmenow == "ip_address"
 						puts killmenow.to_s + " == " + server[killmenow].to_s
 					#end
-	#				if killmenow == "private_ip_address"
-	#					puts server[killmenow].to_s
-	#				end
 				end
 				puts "------------------------"
 			end
@@ -110,18 +105,6 @@ def extricateArrayInfo(ip)
 	end
 
 
-
-
-=begin
-	myarrays["server_arrays"].each do |server|
-		server.each_key do |s|
-			if server["nickname"] =~ /production/
-				ip_list << server["href"]
-			end
-		end
-	end 
-	return ip_list.uniq!	
-=end
 end
 
 def extricateArrayIP(myarrays)
