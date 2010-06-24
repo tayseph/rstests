@@ -31,19 +31,9 @@ def start_stop(myservers, nickname, arg)
 end
 
 def getIP(server)
-	# should probably depricate this. 
-	# gets the "settings" which is a list of things including the IPs
-
-	#puts myservers["servers"].class
 	firstserver = server.pop
 	#puts first.class
 	firstsettings = RightScaleAPI::Client.get(firstserver["href"]+"/settings")
-	#puts firstsettings.class	
-	#puts firstsettings["settings"].class	
-	#firstsettings["settings"].each_key do |key|
-#		puts key.to_s + " == " + firstsettings["settings"][key].to_s
-		
-#	end
 	return firstsettings
 end
 
@@ -64,7 +54,10 @@ def showActiveServers(myservers)
 	end
 end
 
-def extricateArrayInfo(ip)
+def extricateGroupInfo(ip, query, type)
+
+#puts ip, query, type
+
 =begin
 
 	This a pretty rough part of the ruby RS API due to the way that it returns the data.
@@ -81,25 +74,32 @@ def extricateArrayInfo(ip)
 		addy, name = bob.split('###')
 		puts addy
 		puts name	
-		array_settings = RightScaleAPI::Client.get(addy.to_s+"/instances")
-		#puts "array_settings.class " + array_settings.class.to_s
+		if type == "server_arrays"
+			array_settings = RightScaleAPI::Client.get(addy.to_s+"/instances")
+			#puts "array_settings.class " + array_settings.class.to_s
 
-		array_settings.each_key do |key|
-			#puts array_settings[key].class
-			array_settings[key].each do |server|
-				server.each_key do |killmenow|
-					# puts killmenow.to_s + " == " + server[killmenow].to_s	
-					#if killmenow == "ip_address"
-						puts killmenow.to_s + " == " + server[killmenow].to_s
-					#end
+			array_settings.each_key do |key|
+				#puts array_settings[key].class
+				array_settings[key].each do |server|
+					server.each_key do |killmenow|
+						# puts killmenow.to_s + " == " + server[killmenow].to_s	
+						#if killmenow == "ip_address"
+							puts killmenow.to_s + " == " + server[killmenow].to_s
+						#end
+					end
+					puts "------------------------"
 				end
-				puts "------------------------"
+				#print key.to_s + " == " + array_settings[key].to_s  + "\n"
+				puts ""
+				puts " * * * * * * * * * * * "
+				puts ""
 			end
-			#print key.to_s + " == " + array_settings[key].to_s  + "\n"
-			puts ""
-			puts " * * * * * * * * * * * "
-			puts ""
-		end
+		elsif type == "deployments"
+			puts "bob"
+		end	
+
+
+
 		i = i + 1
 	end
 
@@ -158,10 +158,13 @@ args = ARGV
 		my_right_scripts = RightScaleAPI::Client.get('https://my.rightscale.com/api/acct/25875/right_scripts')
 
 		#instance_type = "right_scripts"
+		#instance_type = "deployments"
+		#nickname = "Production Tomcat"
 		instance_type = "server_arrays"
-		nickname = "production-php"
-		#ip_list, server_array = extricateArrayIP(my_server_arrays, instance_type, nickname)
-		#extricateArrayInfo(ip_list)
+		nickname = "production-tomcat"
+		grouping=my_server_arrays
+		ip_list, query= extricateArrayIP(grouping, instance_type, nickname)
+		extricateGroupInfo(ip_list, query, instance_type)
 
 		#puts server_array.class
 		#puts server_array.length
@@ -184,8 +187,8 @@ TEMPLATE="https://my.rightscale.com/api/acct/25875/ec2_server_templates/58528"
 RIGHTSCRIPT="https://my.rightscale.com/api/acct/25875/right_scripts/226724"
 
 
-puts `curl -c youveGotToBeFuckingKiddingMe -u #{creds["username"]}:#{creds["password"]}  https://my.rightscale.com/api/acct/25875/login?api_version=1.0`
-puts `curl -H 'X-API-VERSION: 1.0' -b youveGotToBeFuckingKiddingMe #{ARRAY} -d server_array[right_script_href]=#{RIGHTSCRIPT} -d server_array[server_template_hrefs]=#{TEMPLATE}`
+#puts `curl -c youveGotToBeFuckingKiddingMe -u #{creds["username"]}:#{creds["password"]}  https://my.rightscale.com/api/acct/25875/login?api_version=1.0`
+#puts `curl -H 'X-API-VERSION: 1.0' -b youveGotToBeFuckingKiddingMe #{ARRAY} -d server_array[right_script_href]=#{RIGHTSCRIPT} -d server_array[server_template_hrefs]=#{TEMPLATE}`
 
 #`curl -d right_script=https://my.rightscale.com/api/acct/25875/right_scripts/226724 -H 'X-API-VERSION: 1.0' -b youveGotToBeFuckingKiddingMe https://my.rightscale.com/api/acct/25875/server_arrays/6747/run_script_on_all`
 
