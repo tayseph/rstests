@@ -70,8 +70,8 @@ def extricateGroupInfo(ip, query, type)
 	#puts "ip.length is " + ip.length.to_s
 
 	i = 0
-	ip.each do |bob|
-		addy, name = bob.split('###')
+	ip.each do |arg|
+		addy, name = arg.split('###')
 		puts addy
 		puts name	
 		if type == "server_arrays"
@@ -96,6 +96,11 @@ def extricateGroupInfo(ip, query, type)
 			end
 		elsif type == "deployments"
 			puts "bob"
+			
+			deployments.each_key do |key|
+				puts key
+			end
+			
 		end	
 
 
@@ -158,11 +163,12 @@ args = ARGV
 		my_right_scripts = RightScaleAPI::Client.get('https://my.rightscale.com/api/acct/25875/right_scripts')
 
 		#instance_type = "right_scripts"
-		#instance_type = "deployments"
-		#nickname = "Production Tomcat"
-		instance_type = "server_arrays"
-		nickname = "production-tomcat"
-		grouping=my_server_arrays
+		instance_type = "deployments"
+		nickname = "Production Tomcat"
+		grouping=my_deployments
+		#instance_type = "server_arrays"
+		#nickname = "production-tomcat"
+		#grouping=my_server_arrays
 		ip_list, query= extricateArrayIP(grouping, instance_type, nickname)
 		extricateGroupInfo(ip_list, query, instance_type)
 
