@@ -54,7 +54,7 @@ def showActiveServers(myservers)
 	end
 end
 
-def extricateGroupInfo(ip, query, type)
+def extricateGroupInfo(args) #ip, query, type, search_field)
 
 #puts ip, query, type
 
@@ -70,11 +70,11 @@ def extricateGroupInfo(ip, query, type)
 	#puts "ip.length is " + ip.length.to_s
 
 	i = 0
-	ip.each do |arg|
+	args["ip"].each do |arg|
 		addy, name = arg.split('###')
 		puts addy
 		puts name	
-		if type == "server_arrays"
+		if args["type"] == "server_arrays"
 			array_settings = RightScaleAPI::Client.get(addy.to_s+"/instances")
 			#puts "array_settings.class " + array_settings.class.to_s
 
@@ -94,11 +94,22 @@ def extricateGroupInfo(ip, query, type)
 				puts " * * * * * * * * * * * "
 				puts ""
 			end
-		elsif type == "deployments"
-			puts "bob"
+		elsif args["type"] == "deployments"
 			
-			deployments.each_key do |key|
-				puts key
+			args["query"].each_key do |key|
+				unless key == "servers" then  puts "#{key} -- #{args["query"][key]}" end
+				if key == "servers"
+					args["query"][key].each do |server|
+						puts "------------------------"
+						server.each_key do |details|
+							puts "#{details} -- #{server[details]}"
+#							if 
+						end
+					end
+				end
+				puts ""
+				puts " * * * * * * * * * * * "
+				puts ""
 			end
 			
 		end	
@@ -146,13 +157,15 @@ def extricateArrayIP(my_instances, instance_type, nickname)
 	return ip_list.uniq!, target_server
 end
 
-args = ARGV
+cli_args = ARGV
 
 #puts args[0]
 #puts args[1]
+#puts args[2]
+#puts args[3]
 
 #begin
-	creds = init(args)
+	creds = init(cli_args)
 	RightScaleAPI::Client.login creds["username"], creds["password"] 
 	#types = [ "right_scripts", "servers", "deployments", "server_arrays" ]
 
@@ -163,17 +176,26 @@ args = ARGV
 		my_right_scripts = RightScaleAPI::Client.get('https://my.rightscale.com/api/acct/25875/right_scripts')
 
 		#instance_type = "right_scripts"
-		instance_type = "deployments"
-		nickname = "Production Tomcat"
-		grouping=my_deployments
-		#instance_type = "server_arrays"
-		#nickname = "production-tomcat"
-		#grouping=my_server_arrays
+		#instance_type = "deployments"
+		#nickname = "Production Tomcat"
+		#grouping=my_deployments
+		instance_type = "server_arrays"
+		nickname = "production-tomcat"
+		grouping=my_server_arrays
 		ip_list, query= extricateArrayIP(grouping, instance_type, nickname)
-		extricateGroupInfo(ip_list, query, instance_type)
 
-		#puts server_array.class
-		#puts server_array.length
+#ip, query, type, search_field)
+		args = {	"ip" => ip_list,
+							"query" => query,
+							"type" => instance_type,
+							"nickname" => "",
+							"search_string" => ""
+						}
+
+		if cli_args[1] then args["nickname"] = cli_args[1].to_s end
+		if cli_args[2] then args["search_string"] = cli_args[2].to_s end
+
+		extricateGroupInfo(args)
 
 		params = { "server_array[right_script_href]" => "https://my.rightscale.com/api/acct/25875/right_scripts/226724",  "server_array[server_template_hrefs]" => "https://my.rightscale.com/api/acct/25875/ec2_server_templates/58528"}
 		#server_array["right_script_href"] = "https://my.rightscale.com/api/acct/25875/right_scripts/226724"
