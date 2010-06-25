@@ -130,7 +130,12 @@ cli_args = ARGV
 		my_server_arrays = RightScaleAPI::Client.get('https://my.rightscale.com/api/acct/25875/server_arrays')
 
 		instance_type = "server_arrays"
-		nickname = "production-tomcat"
+		if cli_args[1]
+			nickname = cli_args[1].to_s 
+		else
+			puts "No nick name specified"
+			break
+		end
 		grouping=my_server_arrays
 		ip_list, query= extricateArrayIP(grouping, instance_type, nickname)
 
@@ -141,8 +146,8 @@ cli_args = ARGV
 							"search_string" => ""
 						}
 
-#		if cli_args[1] then args["nickname"] = cli_args[1].to_s end
-		if cli_args[1] then args["search_string"] = cli_args[1].to_s end
+		if cli_args[1] then args["nickname"] = cli_args[1].to_s end
+		if cli_args[2] then args["search_string"] = cli_args[2].to_s end
 		#puts "###{args["search_string"]}##"
 		extricateGroupInfo(args)
 
