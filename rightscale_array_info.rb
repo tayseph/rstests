@@ -1,3 +1,17 @@
+=begin
+
+  This started off as a crude experiment to test out the (limited) RightScale API and it hasn't evolved much beyond tha
+t.  What its good for is to get some information out of RightScale array.  to run the script provide the following:
+
+$> ruby rightscale_array_info.rb <RS_CREDS> <NAME_OF_ARRAY> <ATTRIBUTE>
+
+The possible values for ATTRIBUTE = (href, resource_uid, nickname, private_ip_address, ip_address, state)
+
+=end
+
+
+
+
 require 'rubygems'
 require 'right-scale-api'
 
@@ -51,10 +65,10 @@ def extricateGroupInfo(args) #ip, query, type, search_field)
 			array_settings.each_key do |key|
 				#puts array_settings[key].class
 				array_settings[key].each do |server|
-					server.each_key do |killmenow|
-						# puts killmenow.to_s + " == " + server[killmenow].to_s	
-						if killmenow ==  args["search_string"]
-							puts server[killmenow].to_s
+					server.each_key do |attrib|
+				#		puts attrib.to_s + " == " + server[attrib].to_s	
+						if attrib ==  args["search_string"]
+							puts server[attrib].to_s
 						end
 					end
 					#puts "------------------------"
